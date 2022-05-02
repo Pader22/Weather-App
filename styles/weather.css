@@ -89,3 +89,8 @@
   margin: 10px;
   padding: 10px;
 }
+.openCode {
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
