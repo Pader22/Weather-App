@@ -1,0 +1,91 @@
+.body {
+  font-family: "Red Hat Mono", monospace;
+}
+.weather-app {
+  border: 2px solid #038aff;
+  box-shadow: 0px 2px 2px 0px rgba(15, 10, 222, 0.2);
+  margin-top: 100px;
+  padding: 20px;
+}
+.city {
+  text-align: center;
+}
+.date {
+  text-align: center;
+}
+.search-button {
+  background: #fff;
+  border: none;
+}
+.currentButton {
+  border: 2px solid #038aff;
+  border-radius: 15px;
+  background: #fff;
+  color: #038aff;
+  position: relative;
+  bottom: 30px;
+  left: 150px;
+}
+.dateTime {
+  margin-top: 10px;
+  text-align: center;
+}
+.temperature {
+  color: #038aff;
+  font-size: 50px;
+  text-align: center;
+  margin-top: -20px;
+}
+.tempScale {
+  color: #038aff;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -5px;
+  position: relative;
+  top: -20px;
+}
+.tempScale:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.weather-emoji {
+  text-align: center;
+  font-size: 90px;
+  margin-top: -20px;
+}
+.location {
+  text-align: center;
+}
+.precipation {
+  text-align: center;
+  margin-top: -18px;
+  margin-bottom: 20px;
+}
+.days {
+  text-align: center;
+}
+.wind {
+  color: #038aff;
+}
+.miles,
+.rain {
+  color: black;
+  font-family: "Red Hat Mono", monospace;
+  font-size: 15px;
+  font-weight: 400;
+}
+.droplet {
+  color: #038aff;
+}
+.drop-ofrain {
+  color: #038aff;
+  font-size: 12px;
+}
+.chance-rain {
+  font-size: 12px;
+}
+.hours {
+  border: 2px solid #038aff;
+  margin: 10px;
+  padding: 10px;
+}
