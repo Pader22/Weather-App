@@ -93,7 +93,8 @@
   padding: 10px;
 }
 .openCode {
-  text-align: center;
-  text-decoration: none;
   color: black;
+  max-width: 500px;
+  margin: 0 auto;
+  text-decoration: none;
 }
