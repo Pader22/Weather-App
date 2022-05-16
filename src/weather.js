@@ -51,14 +51,7 @@ fahrTemp.addEventListener("click", fTemperature);
 
 function currentCityTemp(response) {
   let temperature = Math.round(response.data.main.temp);
-
-  let cityTemp = document.querySelector("#temp-change");
-  cityTemp.innerHTML = temperature + `°`;
-}
-
-function cityTemp(response) {
-  let temperature = Math.round(response.data.main.temp);
-
+  console.log(response.data);
   let cityTemp = document.querySelector("#temp-change");
   cityTemp.innerHTML = temperature + `°`;
 }
@@ -66,19 +59,18 @@ function cityTemp(response) {
 function cityName(position) {
   let positionCity = document.querySelector("#city-location");
   positionCity.innerHTML = position.data[0].name;
-  let apiKey = "12c6b70ea425a89a344e6ef71bd22aca";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=${unit}`;
-
-  axios.get(apiUrl).then(cityTemp);
 }
 
 function currentCity(position) {
   let long = position.coords.longitude;
   let lat = position.coords.latitude;
+  let unit = "metric";
   let apiKey = "12c6b70ea425a89a344e6ef71bd22aca";
   let apiUrl = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${long}0&limit=5&appid=${apiKey}`;
+  let tempApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=${unit}`;
 
   axios.get(apiUrl).then(cityName);
+  axios.get(tempApiUrl).then(currentCityTemp);
 }
 
 function currentButton() {
@@ -87,4 +79,3 @@ function currentButton() {
 
 let button = document.querySelector("#current-button");
 button.addEventListener("click", currentButton);
-
