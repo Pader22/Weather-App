@@ -1,5 +1,4 @@
 let current = new Date();
-console.log(current);
 
 let currentDate = document.querySelector("#date-time");
 days = [
@@ -28,6 +27,7 @@ function searchCity(event) {
   let apiKey = "12c6b70ea425a89a344e6ef71bd22aca";
   let searchCity = cityInput.value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${apiKey}&units=metric`;
+
   axios.get(apiUrl).then(currentCityTemp);
 }
 let form = document.querySelector("#search-city");
@@ -51,20 +51,34 @@ fahrTemp.addEventListener("click", fTemperature);
 
 function currentCityTemp(response) {
   let temperature = Math.round(response.data.main.temp);
+
   let cityTemp = document.querySelector("#temp-change");
   cityTemp.innerHTML = temperature + `°`;
+}
+
+function cityTemp(response) {
+  let temperature = Math.round(response.data.main.temp);
+
+  let cityTemp = document.querySelector("#temp-change");
+  cityTemp.innerHTML = temperature + `°`;
+}
+
+function cityName(position) {
+  let positionCity = document.querySelector("#city-location");
+  positionCity.innerHTML = position.data[0].name;
+  let apiKey = "12c6b70ea425a89a344e6ef71bd22aca";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=${unit}`;
+
+  axios.get(apiUrl).then(cityTemp);
 }
 
 function currentCity(position) {
   let long = position.coords.longitude;
   let lat = position.coords.latitude;
-  let unit = "metric";
-  let currentCity = document.querySelector("#city-location");
-  currentCity.innerHTML = `${lat} and ${long}`;
   let apiKey = "12c6b70ea425a89a344e6ef71bd22aca";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=${unit}`;
+  let apiUrl = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${long}0&limit=5&appid=${apiKey}`;
 
-  axios.get(apiUrl).then(currentCityTemp);
+  axios.get(apiUrl).then(cityName);
 }
 
 function currentButton() {
@@ -73,3 +87,4 @@ function currentButton() {
 
 let button = document.querySelector("#current-button");
 button.addEventListener("click", currentButton);
+
