@@ -71,9 +71,9 @@
   color: #038aff;
 }
 .miles,
-.rain {
+.humid {
   color: black;
-  font-family: "Red Hat Mono", monospace;
+
   font-size: 15px;
   font-weight: 400;
 }
