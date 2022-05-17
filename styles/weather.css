@@ -58,6 +58,7 @@
 }
 .location {
   text-align: center;
+  text-transform: capitalize;
 }
 .precipation {
   text-align: center;

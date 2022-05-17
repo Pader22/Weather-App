@@ -51,9 +51,16 @@ fahrTemp.addEventListener("click", fTemperature);
 
 function currentCityTemp(response) {
   let temperature = Math.round(response.data.main.temp);
-  console.log(response.data);
+  let humid = response.data.main.humidity;
+  let humidity = document.querySelector("#humidity");
   let cityTemp = document.querySelector("#temp-change");
+  let windy = document.querySelector("#windSpeed");
+  let wind = Math.round(response.data.wind.speed);
   cityTemp.innerHTML = temperature + `°`;
+  humidity.innerHTML = `Humidity: ` + humid + `%`;
+  windy.innerHTML = wind + `mph`;
+
+  console.log(response.data);
 }
 
 function cityName(position) {
