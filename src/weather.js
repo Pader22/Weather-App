@@ -57,8 +57,8 @@ function currentCityTemp(response) {
   let windy = document.querySelector("#windSpeed");
   let wind = Math.round(response.data.wind.speed);
   cityTemp.innerHTML = temperature + `°`;
-  humidity.innerHTML = `Humidity: ` + humid + `%`;
-  windy.innerHTML = wind + `mph`;
+  humidity.innerHTML =  humid;
+  windy.innerHTML = wind + `Km/H`;
 
   console.log(response.data);
 }
