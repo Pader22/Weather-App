@@ -1,20 +1,44 @@
-let current = new Date();
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  console.log(hours);
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  console.log(minutes);
 
-let currentDate = document.querySelector("#date-time");
-days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-day = days[current.getDay()];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
+}
 
-let hours = current.getHours();
-let minutes = current.getMinutes();
-currentDate.innerHTML = `${day} ${hours}:${minutes}`;
+function displayTemperature(response) {
+  console.log(response.data);
+  let temperature = document.querySelector("#temp-change");
+  let humidity = document.querySelector("#humidity");
+  let wind = document.querySelector("#windSpeed");
+  let date = document.querySelector("#date-time");
+  temperature.innerHTML = Math.round(response.data.main.temp);
+  humidity.innerHTML = Math.round(response.data.main.humidity);
+  wind.innerHTML = Math.round(response.data.wind.speed);
+  date.innerHTML = formatDate(response.data.dt * 1000);
+}
+
+let apiKey = "12c6b70ea425a89a344e6ef71bd22aca";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Minneapolis&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(displayTemperature);
 
 function searchCity(event) {
   event.preventDefault();
@@ -56,9 +80,9 @@ function currentCityTemp(response) {
   let cityTemp = document.querySelector("#temp-change");
   let windy = document.querySelector("#windSpeed");
   let wind = Math.round(response.data.wind.speed);
-  cityTemp.innerHTML = temperature + `°`;
-  humidity.innerHTML =  humid;
-  windy.innerHTML = wind + `Km/H`;
+  cityTemp.innerHTML = temperature;
+  humidity.innerHTML = humid;
+  windy.innerHTML = wind;
 
   console.log(response.data);
 }
