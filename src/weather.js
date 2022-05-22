@@ -9,7 +9,6 @@ function formatDate(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  console.log(minutes);
 
   let days = [
     "Sunday",
@@ -30,10 +29,16 @@ function displayTemperature(response) {
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#windSpeed");
   let date = document.querySelector("#date-time");
+  let weatherIcon = document.querySelector("#icon");
   temperature.innerHTML = Math.round(response.data.main.temp);
   humidity.innerHTML = Math.round(response.data.main.humidity);
   wind.innerHTML = Math.round(response.data.wind.speed);
   date.innerHTML = formatDate(response.data.dt * 1000);
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  console.log(response.data.weather[0].icon);
 }
 
 let apiKey = "12c6b70ea425a89a344e6ef71bd22aca";
@@ -80,11 +85,14 @@ function currentCityTemp(response) {
   let cityTemp = document.querySelector("#temp-change");
   let windy = document.querySelector("#windSpeed");
   let wind = Math.round(response.data.wind.speed);
+  let weatherIcon = document.querySelector("#icon");
   cityTemp.innerHTML = temperature;
   humidity.innerHTML = humid;
   windy.innerHTML = wind;
-
-  console.log(response.data);
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function cityName(position) {
