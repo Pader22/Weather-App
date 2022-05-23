@@ -51,8 +51,8 @@
   top: -20px;
 }
 .tempScale:hover {
-  cursor: pointer;
-  text-decoration: underline;
+  cursor: default;
+  text-decoration: none;
 }
 .weather-emoji {
   text-align: center;

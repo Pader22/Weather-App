@@ -30,6 +30,10 @@ function displayTemperature(response) {
   let wind = document.querySelector("#windSpeed");
   let date = document.querySelector("#date-time");
   let weatherIcon = document.querySelector("#icon");
+
+  celsiusTemp = response.data.main.temp;
+  console.log(celsiusTemp);
+
   temperature.innerHTML = Math.round(response.data.main.temp);
   humidity.innerHTML = Math.round(response.data.main.humidity);
   wind.innerHTML = Math.round(response.data.wind.speed);
@@ -38,8 +42,28 @@ function displayTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  console.log(response.data.weather[0].icon);
 }
+
+function displayCelTemp(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temp-change");
+  temperature.innerHTML = Math.round(celsiusTemp);
+}
+
+let celTemp = document.querySelector("#temp-scale");
+celTemp.addEventListener("click", displayCelTemp);
+
+function displayFahrTemp(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temp-change");
+  let fahrTemp = (celsiusTemp * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahrTemp);
+}
+
+let fahrLink = document.querySelector("#temp-fahr");
+fahrLink.addEventListener("click", displayFahrTemp);
+
+celsiusTemp = null;
 
 let apiKey = "12c6b70ea425a89a344e6ef71bd22aca";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Minneapolis&appid=${apiKey}&units=metric`;
@@ -62,22 +86,6 @@ function searchCity(event) {
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", searchCity);
 
-function celTemperature(event) {
-  event.preventDefault();
-  let changeTemp = document.querySelector("#temp-change");
-  changeTemp.innerHTML = "12°";
-}
-let currentTemp = document.querySelector("#temp-scale");
-currentTemp.addEventListener("click", celTemperature);
-
-function fTemperature(event) {
-  event.preventDefault();
-  let changeTemp = document.querySelector("#temp-change");
-  changeTemp.innerHTML = "52°";
-}
-let fahrTemp = document.querySelector("#temp-fahr");
-fahrTemp.addEventListener("click", fTemperature);
-
 function currentCityTemp(response) {
   let temperature = Math.round(response.data.main.temp);
   let humid = response.data.main.humidity;
@@ -86,6 +94,9 @@ function currentCityTemp(response) {
   let windy = document.querySelector("#windSpeed");
   let wind = Math.round(response.data.wind.speed);
   let weatherIcon = document.querySelector("#icon");
+
+  celsiusTemp = response.data.main.temp;
+
   cityTemp.innerHTML = temperature;
   humidity.innerHTML = humid;
   windy.innerHTML = wind;
