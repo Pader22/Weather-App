@@ -54,10 +54,10 @@
         </section>
 
         <section class="weather-emoji">
-          <img src="#" alt="" id="icon" />
+          <img src="#" alt="" width="130px" id="icon" />
         </section>
         <p class="location" id="city-location">Minneapolis</p>
-        <section class="precipation">
+        <section class="humidity-wind">
           <span class="humid">Humidity: <span id="humidity"></span>%</span>
           <br />
           <i class="fa-solid fa-wind wind">
@@ -65,60 +65,77 @@
             ><span class="miles"> Km/H</span></i
           >
         </section>
-        <section class="days">
+        <section class="forecast">
           <div class="row">
             <div class="col">
-              Mon
-              <div class="sun">
-                <i class="fa-regular fa-sun"> </i>
+              <div class="forecast-days">Mon</div>
+
+              <div class="forecast-icon">
+                <img
+                  src="http://openweathermap.org/img/wn/04n@2x.png"
+                  alt=""
+                  width="36"
+                />
                 <br />
-                60°
+                <span class="max-temp">60°</span>
                 <br />
-                <span class="chance-rain">19% </span>
+                <span class="min-temp">19° </span>
               </div>
             </div>
             <div class="col">
               Tue
-              <div class="cloud-rain">
-                <i class="fa-solid fa-cloud-rain"> </i>
+              <div class="forecast-icon">
+                <img
+                  src="http://openweathermap.org/img/wn/04n@2x.png"
+                  alt=""
+                  width="36"
+                />
                 <br />
-                45°
+                60°
                 <br />
-                <i class="fa-solid fa-droplet drop-ofrain"></i>
-                <span class="chance-rain">20% </span>
+                <span class="min-temp">19° </span>
               </div>
             </div>
             <div class="col">
               Wed
-              <div class="cloud">
-                <i class="fa-solid fa-cloud"> </i>
+              <div class="forecast-icon">
+                <img
+                  src="http://openweathermap.org/img/wn/04n@2x.png"
+                  alt=""
+                  width="36"
+                />
                 <br />
-                50°
+                60°
                 <br />
-                <i class="fa-solid fa-droplet drop-ofrain"></i>
-                <span class="chance-rain">74% </span>
+                <span class="min-temp">19° </span>
               </div>
             </div>
             <div class="col">
               Thur
-              <div class="sun">
-                <i class="fa-regular fa-sun"> </i>
+              <div class="forecast-icon">
+                <img
+                  src="http://openweathermap.org/img/wn/04n@2x.png"
+                  alt=""
+                  width="36"
+                />
                 <br />
-                55°
+                60°
                 <br />
-                <i class="fa-solid fa-droplet drop-ofrain"></i>
-                <span class="chance-rain">15% </span>
+                <span class="min-temp">19° </span>
               </div>
             </div>
             <div class="col">
               Fri
-              <div class="sun">
-                <i class="fa-regular fa-sun"></i>
+              <div class="forecast-icon">
+                <img
+                  src="http://openweathermap.org/img/wn/04n@2x.png"
+                  alt=""
+                  width="36"
+                />
                 <br />
-                15°
+                60°
                 <br />
-                <i class="fa-solid fa-droplet drop-ofrain"></i>
-                <span class="chance-rain">12% </span>
+                <span class="min-temp">19° </span>
               </div>
             </div>
           </div>
@@ -132,7 +149,7 @@
                 57°
                 <br />
                 <i class="fa-solid fa-droplet drop-ofrain"></i>
-                <span class="chance-rain">12% </span>
+                <span class="min-temp">12% </span>
               </div>
             </div>
             <div class="col">
@@ -143,7 +160,7 @@
               49°
               <br />
               <i class="fa-solid fa-droplet drop-ofrain"></i>
-              <span class="chance-rain">12% </span>
+              <span class="min-temp">12% </span>
             </div>
             <div class="col">
               8PM
@@ -153,7 +170,7 @@
               49°
               <br />
               <i class="fa-solid fa-droplet drop-ofrain"></i>
-              <span class="chance-rain">12% </span>
+              <span class="min-temp">12% </span>
             </div>
             <div class="col">
               9PM
@@ -163,7 +180,7 @@
               49°
               <br />
               <i class="fa-solid fa-droplet drop-ofrain"></i>
-              <span class="chance-rain">12% </span>
+              <span class="min-temp">12% </span>
             </div>
             <div class="col">
               10PM
@@ -173,7 +190,7 @@
               49°
               <br />
               <i class="fa-solid fa-droplet drop-ofrain"></i>
-              <span class="chance-rain">12% </span>
+              <span class="min-temp">12% </span>
             </div>
             <div class="col">
               11PM
@@ -183,7 +200,7 @@
               49°
               <br />
               <i class="fa-solid fa-droplet drop-ofrain"></i>
-              <span class="chance-rain">12% </span>
+              <span class="min-temp">12% </span>
             </div>
             <div class="col">
               12PM
@@ -193,7 +210,7 @@
               49°
               <br />
               <i class="fa-solid fa-droplet drop-ofrain"></i>
-              <span class="chance-rain">12% </span>
+              <span class="min-temp">12% </span>
             </div>
           </div>
         </section>

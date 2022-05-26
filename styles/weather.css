@@ -63,14 +63,27 @@
   text-align: center;
   text-transform: capitalize;
 }
-.precipation {
+.humidity-wind {
   text-align: center;
   margin-top: -18px;
   margin-bottom: 20px;
 }
-.days {
+.forecast {
   text-align: center;
 }
+.forecast-icon {
+  text-align: center;
+}
+
+.min-temp {
+  font-size: 15px;
+  opacity: 0.65;
+}
+
+.max-temp {
+  font-size: 16px;
+}
+
 .wind {
   color: #038aff;
 }
@@ -81,16 +94,7 @@
   font-size: 15px;
   font-weight: 400;
 }
-.droplet {
-  color: #038aff;
-}
-.drop-ofrain {
-  color: #038aff;
-  font-size: 12px;
-}
-.chance-rain {
-  font-size: 12px;
-}
+
 .hours {
   border: 2px solid #038aff;
   margin: 10px;
