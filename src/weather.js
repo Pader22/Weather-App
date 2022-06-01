@@ -23,6 +23,38 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  
+    <div class="col-2">
+      <div class="forecast-days" id="forecast-days">
+        ${day}
+      </div>
+
+      <img
+        src="http://openweathermap.org/img/wn/04n@2x.png"
+        alt=""
+        width="40"
+      />
+      <div class="max-temp">60°</div>
+
+      <div class="min-temp">19°</div>
+    </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
+
+displayForecast();
+
 function displayTemperature(response) {
   console.log(response.data);
   let temperature = document.querySelector("#temp-change");
