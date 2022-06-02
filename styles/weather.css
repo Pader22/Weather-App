@@ -79,7 +79,7 @@
 }
 
 .min-temp {
-  font-size: 15px;
+  font-size: 16px;
   opacity: 0.65;
 }
 
@@ -98,11 +98,8 @@
   font-weight: 400;
 }
 
-.hours {
-  border: 2px solid #038aff;
-  margin: 10px;
-  padding: 10px;
-}
+
+
 .openCode {
   color: black;
   max-width: 500px;

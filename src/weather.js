@@ -60,7 +60,6 @@ function displayForecast(response) {
       
     </div>`;
     }
-    console.log(Math.round(forecastDay.temp.min));
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -68,10 +67,8 @@ function displayForecast(response) {
 }
 
 function getDailyForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "12c6b70ea425a89a344e6ef71bd22aca";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -139,7 +136,6 @@ let form = document.querySelector("#search-city");
 form.addEventListener("submit", searchCity);
 
 function currentCityTemp(response) {
-  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   let humid = response.data.main.humidity;
   let humidity = document.querySelector("#humidity");
