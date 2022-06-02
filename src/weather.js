@@ -167,7 +167,7 @@ function currentCity(position) {
   let lat = position.coords.latitude;
   let unit = "metric";
   let apiKey = "12c6b70ea425a89a344e6ef71bd22aca";
-  let apiUrl = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${long}0&limit=5&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${long}0&limit=5&appid=${apiKey}`;
   let tempApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=${unit}`;
 
   axios.get(apiUrl).then(cityName);
